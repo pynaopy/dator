@@ -1,48 +1,41 @@
 current directory: /home/pynaopy/Rails/project_0/vender/bundle/ruby/2.5.0/gems/mysql2-0.5.2/ext/mysql2
-/usr/local/rbenv/versions/2.5.1/bin/ruby -r ./siteconf20180714-31535-ukz4nh.rb extconf.rb
+/usr/local/rbenv/versions/2.5.1/bin/ruby -r ./siteconf20180721-13993-15ei6d0.rb extconf.rb
 checking for rb_absint_size()... yes
 checking for rb_absint_singlebit_p()... yes
 checking for rb_wait_for_single_fd()... yes
-checking for -lmysqlclient... no
 -----
-mysql client is missing. You may need to 'apt-get install libmysqlclient-dev' or 'yum install mysql-devel', and try again.
+Using mysql_config at /usr/bin/mysql_config
 -----
-*** extconf.rb failed ***
-Could not create Makefile due to some reason, probably lack of necessary
-libraries and/or headers.  Check the mkmf.log file for more details.  You may
-need configuration options.
+checking for mysql.h... yes
+checking for errmsg.h... yes
+checking for SSL_MODE_DISABLED in mysql.h... no
+checking for MYSQL_OPT_SSL_ENFORCE in mysql.h... no
+checking for MYSQL.net.vio in mysql.h... yes
+checking for MYSQL.net.pvio in mysql.h... no
+checking for MYSQL_ENABLE_CLEARTEXT_PLUGIN in mysql.h... yes
+checking for SERVER_QUERY_NO_GOOD_INDEX_USED in mysql.h... yes
+checking for SERVER_QUERY_NO_INDEX_USED in mysql.h... yes
+checking for SERVER_QUERY_WAS_SLOW in mysql.h... yes
+checking for MYSQL_OPTION_MULTI_STATEMENTS_ON in mysql.h... yes
+checking for MYSQL_OPTION_MULTI_STATEMENTS_OFF in mysql.h... yes
+checking for my_bool in mysql.h... yes
+-----
+Setting libpath to /usr/lib64/mysql
+-----
+creating Makefile
 
-Provided configuration options:
-	--with-opt-dir
-	--without-opt-dir
-	--with-opt-include
-	--without-opt-include=${opt-dir}/include
-	--with-opt-lib
-	--without-opt-lib=${opt-dir}/lib
-	--with-make-prog
-	--without-make-prog
-	--srcdir=.
-	--curdir
-	--ruby=/usr/local/rbenv/versions/2.5.1/bin/$(RUBY_BASE_NAME)
-	--with-mysql-dir
-	--without-mysql-dir
-	--with-mysql-include
-	--without-mysql-include=${mysql-dir}/include
-	--with-mysql-lib
-	--without-mysql-lib=${mysql-dir}/lib
-	--with-mysql-config
-	--without-mysql-config
-	--with-mysql-dir
-	--without-mysql-dir
-	--with-mysql-include
-	--without-mysql-include=${mysql-dir}/include
-	--with-mysql-lib
-	--without-mysql-lib=${mysql-dir}/lib
-	--with-mysqlclientlib
-	--without-mysqlclientlib
+current directory: /home/pynaopy/Rails/project_0/vender/bundle/ruby/2.5.0/gems/mysql2-0.5.2/ext/mysql2
+make "DESTDIR=" clean
 
-To see why this extension failed to compile, please check the mkmf.log which can be found here:
+current directory: /home/pynaopy/Rails/project_0/vender/bundle/ruby/2.5.0/gems/mysql2-0.5.2/ext/mysql2
+make "DESTDIR="
+compiling client.c
+compiling infile.c
+compiling mysql2_ext.c
+compiling result.c
+compiling statement.c
+linking shared-object mysql2/mysql2.so
 
-  /home/pynaopy/Rails/project_0/vender/bundle/ruby/2.5.0/extensions/x86_64-linux/2.5.0-static/mysql2-0.5.2/mkmf.log
-
-extconf failed, exit code 1
+current directory: /home/pynaopy/Rails/project_0/vender/bundle/ruby/2.5.0/gems/mysql2-0.5.2/ext/mysql2
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 mysql2.so ./.gem.20180721-13993-1vesq0h/mysql2
