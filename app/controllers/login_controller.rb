@@ -1,4 +1,4 @@
-class LoginController < ActionController::Base
+class LoginController < ApplicationController
   def privateMethod
     @yes = 30;
     return "デストロイ！"
