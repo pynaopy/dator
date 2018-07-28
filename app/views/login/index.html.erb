@@ -16,17 +16,14 @@
         color: #333;
       }
 
-      header {
-        background: radial-gradient(#F2B9A1, #EA6264);
-      }
-
       .headline {
         position: relative;
         height: 600px;
         color: #555;
         text-align: center;
-//        background: url("https://farm9.staticflickr.com/8088/8363737128_b76782c7a2_b.jpg") no-repeat center center;
-//        background-size: cover;
+        background: radial-gradient(#F2B9A1, #EA6264);
+        background: url("assets/top-page.jpg") no-repeat center center;
+        background-size: cover;
       }
       .headline:after {
         position: absolute;
@@ -56,7 +53,7 @@
       .title h1 {
         margin: 0;
         color: #fff;
-        font-size: 5em;
+        font-size: 4em;
         line-height: 1.2em;
       }
 
@@ -83,16 +80,15 @@
         margin: 0 auto;
         padding: 1em;
         max-width: 370px;
+        border-radius: 7px;
       }
       .form-wrapper h1 {
         margin: 0;
       }
       .form-item {
         margin-bottom: 1em;
-        width: 100%;
       }
       .form-item div {
-        width: 100%;
         margin-bottom: 0.25em;
         text-align: left;
       }
@@ -107,7 +103,6 @@
       }
       .button-panel {
         margin: 2em 0 0;
-        width: 100%;
       }
       .button-panel .button {
         background: #f16272;
@@ -122,6 +117,7 @@
         text-transform: uppercase;
         transition: background 0.3s ease-in-out;
         width: 100%;
+        border-radius: 5px;
       }
 
       .button:hover {
@@ -135,16 +131,26 @@
         background-color: rgba(210, 95, 95, 0.9);
 //        background-color: rgba(50,200,50,0.5);//debug緑
       }
+      nav div{
+        float: left;
+        padding: 5px 0 0 20px;
+        margin: 0;
+      }
+      nav div > a{
+        font-size: 2em;
+        color: #fff;
+        text-decoration: none;
+      }
       nav ul {
         float: right;
         list-style: none;
-        padding: 25px;
+        padding: 15px;
         margin: 0;
       }
       nav li {
         float: left;
       }
-      nav a {
+      nav li > a {
         font-size: 0.9em;
         color: #fff;
         text-decoration: none;
@@ -162,6 +168,9 @@
 
   <body>
     <nav>
+      <div>
+        <a href="#">タイトル</a>
+      </div>
       <ul>
         <li><a href="#">リンク１</a></li>
         <li><a href="#">リンク２</a></li>
@@ -169,17 +178,20 @@
       </ul>
     </nav>
 
-    <header>
-      <div class="headline">
-        <div class="inner">
-          <div class="title">
-            <h1>タイトル</h1>
-          </div>
+    <div class="headline">
+      <div class="inner">
+        <div class="title">
+          <h1>知らない!?</h1>
+        </div>
+        <div class="forms-wrapper">
           <!--新規登録-->
-          <div class="forms-wrapper">
           <div class="signup-wrapper">
             <div class="form-wrapper">
               <h1>はじめて</h1>
+              <div class="form-item">
+                <div>名前</div>
+                <input type="text" placeholder="ユーザー名">
+              </div>
               <div class="button-panel">
                 <input type="button" class="button" value="新規登録"></input>
               </div>
@@ -198,14 +210,14 @@
                 <input type="text">
               </div>
               <div class="button-panel">
-                <input type="button" class="button" value="新規登録"></input>
+                <input type="button" class="button" value="ログイン"></input>
               </div>
             </div>
           </div>
         </div>
-        </div>
       </div>
-    </header>
+    </div>
+
     <div style="width:200px;">
       <p>なんか書いとけ。スクロールさせるだけの分量を書かないと。
       「あ」でうめよう。あああああああああああああああああああ
