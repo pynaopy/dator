@@ -103,12 +103,12 @@ body {
     letter-spacing: 0.05em;
     text-align: center;
     text-transform: uppercase;
-    transition: background 0.3s ease-in-out;
+    transition: background 0.2s ease-in-out;
     width: 100%;
     border-radius: 5px;
-  }
-  &:hover {
-    background: #ee3e52;
+    &:hover {
+      background: #ee3e52;
+    }
   }
 }
 

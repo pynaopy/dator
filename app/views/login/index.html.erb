@@ -1,11 +1,11 @@
 <% provide(:title, 'ログイン') %>
 <nav>
   <div>
-    <a href="#">タイトル</a>
+    <%= link_to 'タイトル', root_path %>
   </div>
   <ul>
-    <li><a href="#">リンク１</a></li>
-    <li><a href="#">リンク２</a></li>
+    <li><%= link_to 'リンク１', main_home_path %></li>
+    <li><%= link_to 'リンク２', login_show_path %></li>
     <li><a href="#">リンク３</a></li>
   </ul>
 </nav>
@@ -42,7 +42,7 @@
             <input type="text">
           </div>
           <div class="button-panel">
-            <input type="button" class="button" value="ログイン"></input>
+            <%= button_to "ログイン", "main/home", class: "button" %>
           </div>
         </div>
       </div>
