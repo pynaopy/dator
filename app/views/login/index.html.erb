@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ログイン画面</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+
+    <style type="text/css">
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: -apple-system,BlinkMacSystemFont,"Helvetica Neue","游ゴシック Medium",YuGothic,YuGothicM,"Hiragino Kaku Gothic ProN",メイリオ,Meiryo,sans-serif;
+        color: #333;
+      }
+
+      header {
+        background: radial-gradient(#F2B9A1, #EA6264);
+      }
+
+      .headline {
+        position: relative;
+        height: 600px;
+        color: #555;
+        text-align: center;
+//        background: url("https://farm9.staticflickr.com/8088/8363737128_b76782c7a2_b.jpg") no-repeat center center;
+//        background-size: cover;
+      }
+      .headline:after {
+        position: absolute;
+        content: '';
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(17, 17, 17, 0.1);
+      }
+
+      .inner {
+        position: absolute;
+        top: 20%;
+        width: 100%;
+        z-index: 10;
+//        text-align: center;
+//        background-color: rgba(150,0,200,0.2);//debug紫
+      }
+
+      .title {
+        width: 100%;
+        margin: 0 auto;
+        margin-bottom: 1em;
+//        background-color: rgba(200,50,50,0.5);//debug赤
+      }
+      .title h1 {
+        margin: 0;
+        color: #fff;
+        font-size: 5em;
+        line-height: 1.2em;
+      }
+
+      .forms-wrapper{
+        display: flex;
+	      justify-content: center;
+      }
+      .signup-wrapper{
+        width: 400px;
+        min-width: 270px;
+        margin: 2em;
+//        display: inline-block;
+//        background-color: rgba(50,50,200,0.5);//debug青
+      }
+      .signin-wrapper{
+        width: 400px;
+        min-width: 270px;
+        margin: 2em;
+//        display: inline-block;
+//        background-color: rgba(50,50,200,0.5);//debug青
+      }
+      .form-wrapper {
+        background: #fafafa;
+        margin: 0 auto;
+        padding: 1em;
+        max-width: 370px;
+      }
+      .form-wrapper h1 {
+        margin: 0;
+      }
+      .form-item {
+        margin-bottom: 1em;
+        width: 100%;
+      }
+      .form-item div {
+        width: 100%;
+        margin-bottom: 0.25em;
+        text-align: left;
+      }
+      .form-item input {
+        font-weight: bold;
+        color: #555;/*文字色*/
+        background: #FFF;
+        border: solid 2px #6091d3;/*線*/
+        border-radius: 5px;/*角の丸み*/
+        height: 30px;
+        width: 100%;
+      }
+      .button-panel {
+        margin: 2em 0 0;
+        width: 100%;
+      }
+      .button-panel .button {
+        background: #f16272;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+        height: 50px;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 1.2em;
+        letter-spacing: 0.05em;
+        text-align: center;
+        text-transform: uppercase;
+        transition: background 0.3s ease-in-out;
+        width: 100%;
+      }
+
+      .button:hover {
+        background: #ee3e52;
+      }
+
+      nav {
+        position: fixed;
+        width: 100%;
+        z-index: 15;
+        background-color: rgba(210, 95, 95, 0.9);
+//        background-color: rgba(50,200,50,0.5);//debug緑
+      }
+      nav ul {
+        float: right;
+        list-style: none;
+        padding: 25px;
+        margin: 0;
+      }
+      nav li {
+        float: left;
+      }
+      nav a {
+        font-size: 0.9em;
+        color: #fff;
+        text-decoration: none;
+        margin: 5px 0 0 20px;
+        display: block;
+      }
+      nav a:hover {
+        color: #ccc;
+      }
+    </style>
+
+    <script type="text/javascript">
+    </script>
+  </head>
+
+  <body>
+    <nav>
+      <ul>
+        <li><a href="#">リンク１</a></li>
+        <li><a href="#">リンク２</a></li>
+        <li><a href="#">リンク３</a></li>
+      </ul>
+    </nav>
+
+    <header>
+      <div class="headline">
+        <div class="inner">
+          <div class="title">
+            <h1>タイトル</h1>
+          </div>
+          <!--新規登録-->
+          <div class="forms-wrapper">
+          <div class="signup-wrapper">
+            <div class="form-wrapper">
+              <h1>はじめて</h1>
+              <div class="button-panel">
+                <input type="button" class="button" value="新規登録"></input>
+              </div>
+            </div>
+          </div>
+          <!--ログイン-->
+          <div class="signin-wrapper">
+            <div class="form-wrapper">
+              <h1>ログイン</h1>
+              <div class="form-item">
+                <div>名前</div>
+                <input type="text" placeholder="松尾　恭志郎">
+              </div>
+              <div class="form-item">
+                <div>構造テスト</div>
+                <input type="text">
+              </div>
+              <div class="button-panel">
+                <input type="button" class="button" value="新規登録"></input>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </header>
+    <div style="width:200px;">
+      <p>なんか書いとけ。スクロールさせるだけの分量を書かないと。
+      「あ」でうめよう。あああああああああああああああああああ
+      あああああああああああああああああああああああああああああ
+      あああああああああああああああああああああああああああああ
+      あああああああああああああああああああああああああああああ
+      あああああああああああああああああああああああああああああ
+      あああああああああああああああああああああああああああああ
+      あああああああああああああああああああああああああああああ
+      あああああああああああああああああああああああああああああ
+      あああああああああああああああああああああああああああああ
+      あああああああああああああああああああああああああああああ
+      あああああああああああああああああああああああああああああ
+      あああああああああああああああああああああああああああああ
+      あああああああああああああああああああああああああああああ</p>
+      <%= @v %><br>
+      <%= @yes =%>
+    </div>
+  </body>
+</html>
