@@ -1,0 +1,53 @@
+#content{
+  position: absolute;
+  top: 60px;
+  width: 100%;
+  // background-color: rgba(150,0,200,0.2);//debug紫
+}
+
+#timeline{
+  margin: 0 auto 0 auto;
+  // background: grey;//debug
+  max-width: 400px;
+  min-width: 270px;
+  .item-wrapper{
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    color: #5d627b;
+    background: white;
+    border-top: solid 5px #cd828b;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+    border-radius: 0 0 9px 9px;
+    .poster{
+      font-weight: bold;
+      padding-bottom: 2px;
+      border-bottom: dashed 1px;
+    }
+    .main-text{
+      margin: 10px 0;
+    }
+    input.comment{
+      font-weight: bold;
+      color: #555;/*文字色*/
+      background: #FFF;
+      border: solid 2px #6091d3;/*線*/
+      border-radius: 5px;/*角の丸み*/
+      height: 20px;
+      width: 75%;
+    }
+    input.button {
+      background: #f16272;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+      height: 26px;
+      text-align: center;
+      transition: background 0.2s ease-in-out;
+      width: 20%;
+      border-radius: 5px;
+      &:hover {
+        background: #ee3e52;
+      }
+    }
+  }
+}

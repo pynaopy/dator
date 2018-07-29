@@ -17,6 +17,7 @@ default: &default
   password:
   socket: /var/lib/mysql/mysql.sock
 
+
 development:
   <<: *default
   database: project_0_development

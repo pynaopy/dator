@@ -1,0 +1,150 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system,BlinkMacSystemFont,"Helvetica Neue","游ゴシック Medium",YuGothic,YuGothicM,"Hiragino Kaku Gothic ProN",メイリオ,Meiryo,sans-serif;
+  color: #333;
+}
+
+.headline {
+  position: relative;
+  height: 600px;
+  color: #555;
+  text-align: center;
+  background: radial-gradient(#F2B9A1, #EA6264);
+  background: url("top-page.jpg") no-repeat center center;
+  background-size: cover;
+  &:after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(17, 17, 17, 0.1);
+  }
+}
+
+.inner {
+  position: absolute;
+  top: 20%;
+  width: 100%;
+  z-index: 10;
+//        text-align: center;
+//        background-color: rgba(150,0,200,0.2);//debug紫
+}
+
+.title {
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 1em;
+//        background-color: rgba(200,50,50,0.5);//debug赤
+  h1 {
+    margin: 0;
+    color: #fff;
+    font-size: 4em;
+    line-height: 1.2em;
+  }
+}
+
+.forms-wrapper{
+  display: flex;
+  justify-content: center;
+}
+.signup-wrapper{
+  width: 400px;
+  min-width: 270px;
+  margin: 2em;
+//        display: inline-block;
+//        background-color: rgba(50,50,200,0.5);//debug青
+}
+.signin-wrapper{
+  width: 400px;
+  min-width: 270px;
+  margin: 2em;
+//        display: inline-block;
+//        background-color: rgba(50,50,200,0.5);//debug青
+}
+.form-wrapper {
+  background: #fafafa;
+  margin: 0 auto;
+  padding: 1em;
+  max-width: 370px;
+  border-radius: 7px;
+  h1 {
+    margin: 0;
+  }
+}
+.form-item {
+  margin-bottom: 1em;
+  div {
+    margin-bottom: 0.25em;
+    text-align: left;
+  }
+  input {
+    font-weight: bold;
+    color: #555;/*文字色*/
+    background: #FFF;
+    border: solid 2px #6091d3;/*線*/
+    border-radius: 5px;/*角の丸み*/
+    height: 30px;
+    width: 100%;
+  }
+}
+.button-panel {
+  margin: 2em 0 0;
+  .button {
+    background: #f16272;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    height: 50px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.2em;
+    letter-spacing: 0.05em;
+    text-align: center;
+    text-transform: uppercase;
+    transition: background 0.2s ease-in-out;
+    width: 100%;
+    border-radius: 5px;
+    &:hover {
+      background: #ee3e52;
+    }
+  }
+}
+
+nav {
+  position: fixed;
+  width: 100%;
+  z-index: 15;
+  background-color: rgba(210, 95, 95, 0.9);
+//        background-color: rgba(50,200,50,0.5);//debug緑
+  div{
+    float: left;
+    padding: 5px 0 0 20px;
+    margin: 0;
+    > a{
+      font-size: 2em;
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+  ul {
+    float: right;
+    list-style: none;
+    padding: 15px;
+    margin: 0;
+  }
+  li {
+    float: left;
+    > a {
+      font-size: 0.9em;
+      color: #fff;
+      text-decoration: none;
+      margin: 5px 0 0 20px;
+      display: block;
+    }
+  }
+  a:hover {
+    color: #ccc;
+  }
+}

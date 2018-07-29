@@ -1,0 +1,69 @@
+<% provide(:title, 'ログイン') %>
+<nav>
+  <div>
+    <%= link_to 'タイトル', root_path %>
+  </div>
+  <ul>
+    <li><%= link_to 'リンク１', main_home_path %></li>
+    <li><%= link_to 'リンク２', login_show_path %></li>
+    <li><a href="#">リンク３</a></li>
+  </ul>
+</nav>
+
+<div class="headline">
+  <div class="inner">
+    <div class="title">
+      <h1>知らない!?</h1>
+    </div>
+    <div class="forms-wrapper">
+      <!--新規登録-->
+      <div class="signup-wrapper">
+        <div class="form-wrapper">
+          <h1>はじめて</h1>
+          <div class="form-item">
+            <div>名前</div>
+            <input type="text" placeholder="ユーザー名">
+          </div>
+          <div class="button-panel">
+            <input type="button" class="button" value="新規登録"></input>
+          </div>
+        </div>
+      </div>
+      <!--ログイン-->
+      <div class="signin-wrapper">
+        <div class="form-wrapper">
+          <h1>ログイン</h1>
+          <div class="form-item">
+            <div>名前</div>
+            <input type="text" placeholder="松尾　恭志郎">
+          </div>
+          <div class="form-item">
+            <div>構造テスト</div>
+            <input type="text">
+          </div>
+          <div class="button-panel">
+            <%= button_to "ログイン", "main/home", class: "button" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div style="width:200px;">
+  <p>なんか書いとけ。スクロールさせるだけの分量を書かないと。
+  「あ」でうめよう。あああああああああああああああああああ
+  あああああああああああああああああああああああああああああ
+  あああああああああああああああああああああああああああああ
+  あああああああああああああああああああああああああああああ
+  あああああああああああああああああああああああああああああ
+  あああああああああああああああああああああああああああああ
+  あああああああああああああああああああああああああああああ
+  あああああああああああああああああああああああああああああ
+  あああああああああああああああああああああああああああああ
+  あああああああああああああああああああああああああああああ
+  あああああああああああああああああああああああああああああ
+  あああああああああああああああああああああああああああああ
+  あああああああああああああああああああああああああああああ</p>
+  <%= @v %><br>
+  <%= @yes =%>
+</div>
