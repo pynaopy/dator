@@ -26,6 +26,10 @@ class LoginController < ApplicationController
       session[:name] = params[:user][:name]
       redirect_to main_home_path()
     else
+      if @user.errors.details[:name].any?
+        p @user.errors.details[:name][0][:error]
+        p @user.errors.messages[:name][0]
+      end
       render :index
     end
   end

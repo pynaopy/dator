@@ -10,6 +10,19 @@
   </ul>
 </nav>
 
+<script>
+$(function(){
+  if(<%= @user.errors.details[:name].any? %>){
+    $("#user_name").addClass("is-invalid");
+    $("#user_name").parent().next().addClass("d-block");
+  }
+  if(<%= @user.errors.details[:password].any? %>){
+    $("#user_password").addClass("is-invalid");
+    $("#user_password").parent().next().addClass("d-block");
+  }
+})
+</script>
+
 <div class="headline">
   <div class="inner">
     <div class="title">
@@ -21,18 +34,18 @@
         <div class="form-wrapper">
           <h2>はじめて</h2>
           <%= form_with model: @user, url: login_signup_path, local: true do |f| %>
-<!--            <div class="form-item">-->
-<!--              <div>名前</div>-->
             <div class="form-group">
               <%= f.text_field :name, class: 'form-control', placeholder: 'ユーザー名' %>
+              <div class="invalid-feedback text-left">
+                <%= @user.errors.messages[:name][0] %>
+              </div>
             </div>
-<!--            </div>-->
-<!--            <div class="form-item">-->
-<!--              <div>パスワード</div>-->
             <div class="form-group">
               <%= f.text_field :password, class: 'form-control', placeholder: 'パスワード' %>
+              <div class="invalid-feedback text-left">
+                <%= @user.errors.messages[:password][0] %>
+              </div>
             </div>
-<!--            </div>-->
             <div class="button-panel">
               <%= f.button "新規登録", class: "btn btn-danger btn-block" %>
             </div>
@@ -49,7 +62,7 @@
               <%= f.text_field :name %>
             </div>
             <div class="form-item">
-              <div>構造テスト</div>
+              <div>パスワード</div>
               <%= f.text_field :password %>
             </div>
             <div class="button-panel">
