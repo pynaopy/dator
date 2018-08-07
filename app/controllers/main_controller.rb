@@ -2,7 +2,10 @@ class MainController < ApplicationController
   def home
     show
   end
+
   def show
+    afe = "a"
+
     name = session[:name]
     p name
     if name
