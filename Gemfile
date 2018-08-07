@@ -58,3 +58,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'bootstrap', '~> 4.1.1'
 gem 'jquery-rails'
+
+# javadocのruby版みたいなやつ
+gem 'yard'
+# 静的解析ツール。使ってない変数とかわかるやつ。
+gem 'rubocop'
