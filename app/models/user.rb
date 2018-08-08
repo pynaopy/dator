@@ -13,7 +13,7 @@ class User < ApplicationRecord
     presence: {message: MsgConst.read(1, PASSWORD)},
     length: {maximum: 30, message: MsgConst.read(2, PASSWORD, 30)}
 
-  validate :already_registered
+  validate :already_registered, on: :signin
 
   # name,passwordに一致するレコードがDBにないならNG
   def already_registered
