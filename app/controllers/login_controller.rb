@@ -1,11 +1,6 @@
+# ログイン画面コントローラー<br>
+# 現状はユーザー登録もここで行う。
 class LoginController < ApplicationController
-  def privateMethod
-    @yes = 30;
-    return "デストロイ！"
-  end
-  private :privateMethod
-
-
   # 初期表示。<br>
   # @new_userは新規登録用の箱で、@userはログイン用の箱。
   # リクエストスコープだから、初期表示時はこれなくてもいいのではないだろうかという
@@ -13,19 +8,14 @@ class LoginController < ApplicationController
   # ようなエラーで画面落ちてしまうので作っておく。
   def index
     session[:name] = nil # ログイン情報初期化。コメントないと何やってるかわかんねえな。
-                         # やっぱクラスあった方がいいよね。
     @v = '24'
-#    p "わけがわからない" + @v + "歳"
-    privateMethod
     @new_user = User.new
     @user = User.new
   end
 
-
   def show
-    render html:"Hello,え・・・？"
+    render html: 'Hello,え・・・？'
   end
-
 
   # 新規登録。<br>
   # 検証オッケーならUserレコード新規追加して、次画面にリダイレクト。
@@ -59,7 +49,6 @@ class LoginController < ApplicationController
     end
   end
 
-
   # ログイン。<br>
   # 新規登録とほとんど同じ作りになった。いい設計ってことだな。（自画自賛）<br>
   # @return [遷移先] 検証オッケーならmain_home_path, だめなら自画面
@@ -76,13 +65,13 @@ class LoginController < ApplicationController
     end
   end
 
-
   private
-    def new_user_params
-      params.require(:new_user).permit(:name, :password)
-    end
 
-    def user_params
-      params.require(:user).permit(:name, :password)
-    end
+  def new_user_params
+    params.require(:new_user).permit(:name, :password)
+  end
+
+  def user_params
+    params.require(:user).permit(:name, :password)
+  end
 end

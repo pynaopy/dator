@@ -1,59 +1,55 @@
 <% provide(:title, 'ホーム') %>
-<nav>
-  <div>
-    <%= link_to 'タイトル', root_path %>
+<nav class="navbar navbar-expand-lg sticky-top">
+  <%= link_to 'タイトル', root_path, class: "navbar-brand" %>
+  <div class="navbar-light">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
   </div>
-  <ul>
-    <li><%= link_to 'リンク１', main_home_path %></li>
-    <li><%= link_to 'リンク２', login_show_path %></li>
-    <li><a href="#">リンク３</a></li>
-  </ul>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav ml-auto">
+      <%= link_to 'リンク１', main_home_path, class: "nav-item nav-link" %>
+      <%= link_to 'リンク２', login_show_path, class: "nav-item nav-link" %>
+      <a class="nav-item nav-link" href="#">リンク３</a>
+    </div>
+    <form class="form-inline">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
 </nav>
 
-<div id="content">
-  <section id="timeline">
-    <div class="item-wrapper">
-      <div class="poster">嘉緒翠（かおす）</div>
-      <div class="main-text">
-        ここはdiv要素
+<div class="container-fluid">
+  <div class="row">
+    <section class="col-sm-3 sidebar">
+      <div class="sidebar-sticky">
+        <div class="profile">
+          <%= @user.name %>
+        </div>
+        <br><hr>
+        ひとまずここでメッセージ登録
+        <%= form_with model: @new_homerare, scope: :new_homerare, url: main_create_path, local: true do |f| %>
+          <%= f.text_field :message, class: 'form-control' %>
+          <%= f.button "ホメラレ！", class: "btn btn-danger btn-block" %>
+        <% end %>
       </div>
-      <input type="text" class="comment">
-      <input type="button" value="ほめる" class="button">
-    </div>
-    <div class="item-wrapper">
-      <div class="poster">黄熊（ぷう）</div>
-      <div class="main-text">
-        改行テスト。
-        ああああああああああああああああああああああああ
-        ああああああああああああああああああああああああ
-      </div>
-      <input type="text" class="comment">
-      <input type="button" value="ほめる" class="button">
-    </div>
-    <div class="item-wrapper">
-      <div class="poster">今鹿（なうしか）</div>
-      <div class="main-text">
-        あ<br>
-        い<br>
-        う<br>
-        え<br>
-        お<br>
-        か<br>
-        き<br>
-        く<br>
-        け<br>
-        こ<br>
-      </div>
-      <input type="text" class="comment">
-      <input type="button" value="ほめる" class="button">
-    </div>
-    <div class="item-wrapper">
-      <div class="poster"><%= @user.name %></div>
-      <div class="main-text">
-        ここはdiv要素
-      </div>
-      <input type="text" class="comment">
-      <input type="button" value="ほめる" class="button">
-    </div>
-  </section>
+    </section>
+
+    <section id="timeline" class="col-sm-6">
+        <% @timeline.each do |t| %>
+          <%= form_with url: main_update_path, local: true do |f| %>
+            <div class="item-wrapper">
+              <div class="poster"><%= t.user.name %></div>
+              <div class="main-text">
+                <%= t.id %>：<%= t.created_at %><br>
+                <%= t.message %>
+              </div>
+              <input type="text" name="homeru" class="comment">
+              <input type="submit" value="ほめる" class="button">
+              <input type="hidden" name="id" value="<%= t.id %>">
+            </div>
+          <% end %>
+        <% end %>
+    </section>
+  </div>
 </div>

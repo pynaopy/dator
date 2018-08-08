@@ -1,0 +1,7 @@
+# コメント行に日本語を使えるようにする。
+Style/AsciiComments:
+  Enabled: false
+
+# 先頭行にマジックリテラルを書いた方がいいよといううるさい警告を消す。
+Style/FrozenStringLiteralComment:
+  Enabled: false
