@@ -3,6 +3,7 @@
 # 認証用のユーザー一覧のような立ち位置にしてしまった方がいいかも。<br>
 # てかモデルにフィールド書かないからUserテーブルの定義わかんねえな。
 class User < ApplicationRecord
+  has_many :homerares
   extend MsgConst
 
   NAME = '名前'.freeze
