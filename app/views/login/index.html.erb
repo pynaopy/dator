@@ -12,6 +12,14 @@
 
 <script>
 $(function(){
+  if(<%= @new_user.errors.details[:name].any? %>){
+    $("#new_user_name").addClass("is-invalid");
+    $("#new_user_name").parent().next().addClass("d-block");
+  }
+  if(<%= @new_user.errors.details[:password].any? %>){
+    $("#new_user_password").addClass("is-invalid");
+    $("#new_user_password").parent().next().addClass("d-block");
+  }
   if(<%= @user.errors.details[:name].any? %>){
     $("#user_name").addClass("is-invalid");
     $("#user_name").parent().next().addClass("d-block");
@@ -33,17 +41,17 @@ $(function(){
       <div class="signup-wrapper">
         <div class="form-wrapper">
           <h2>はじめて</h2>
-          <%= form_with model: @user, url: login_signup_path, local: true do |f| %>
+          <%= form_with model: @new_user, scope: :new_user, url: login_signup_path, local: true do |f| %>
             <div class="form-group">
               <%= f.text_field :name, class: 'form-control', placeholder: 'ユーザー名' %>
               <div class="invalid-feedback text-left">
-                <%= @user.errors.messages[:name][0] %>
+                <%= @new_user.errors.messages[:name][0] %>
               </div>
             </div>
             <div class="form-group">
               <%= f.text_field :password, class: 'form-control', placeholder: 'パスワード' %>
               <div class="invalid-feedback text-left">
-                <%= @user.errors.messages[:password][0] %>
+                <%= @new_user.errors.messages[:password][0] %>
               </div>
             </div>
             <div class="button-panel">
@@ -55,18 +63,22 @@ $(function(){
       <!--ログイン-->
       <div class="signin-wrapper">
         <div class="form-wrapper">
-          <h1>ログイン</h1>
+          <h2>ログイン</h2>
           <%= form_with model: @user, url: login_signin_path, local: true do |f| %>
-            <div class="form-item">
-              <div>名前</div>
-              <%= f.text_field :name %>
+            <div class="form-group">
+              <%= f.text_field :name, class: 'form-control', placeholder: '名前' %>
+              <div class="invalid-feedback text-left">
+                <%= @user.errors.messages[:name][0] %>
+              </div>
             </div>
-            <div class="form-item">
-              <div>パスワード</div>
-              <%= f.text_field :password %>
+            <div class="form-group">
+              <%= f.text_field :password, class: 'form-control', placeholder: 'パスワード' %>
+              <div class="invalid-feedback text-left">
+                <%= @user.errors.messages[:password][0] %>
+              </div>
             </div>
             <div class="button-panel">
-              <%= f.button "ログイン", class: "button" %>
+              <%= f.button "ログイン", class: "btn btn-danger btn-block" %>
             </div>
           <% end %>
         </div>
@@ -74,15 +86,7 @@ $(function(){
     </div>
   </div>
 </div>
-<%= @user.errors.any? %>
-<% if @user.errors.any? %>
-あいうえお
-  <ul>
-  <% @user.errors.full_messages.each do |msg| %>
-    <li><%= msg %></li>
-  <% end %>
-  </ul>
-<% end %>
+
 <div style="width:200px;">
   <p>なんか書いとけ。スクロールさせるだけの分量を書かないと。
   「あ」でうめよう。あああああああああああああああああああ
